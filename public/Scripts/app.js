@@ -5,3 +5,7 @@
 
   window.addEventListener("load", Start);
 })();
+function onSubmit() {
+  console.log("Clicked");
+  window.location.href = "/";
+}
