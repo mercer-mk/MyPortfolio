@@ -28,12 +28,6 @@ router.get("/login", indexController.displayLoginPage);
 
 router.post("/login", indexController.processLoginPage);
 
-/* GET Route for displaying the Register page */
-router.get("/register", indexController.displayRegisterPage);
-
-/* POST Route for processing the Register page */
-router.post("/register", indexController.processRegisterPage);
-
 /* GET to perform UserLogout */
 router.get("/logout", indexController.performLogout);
 module.exports = router;
