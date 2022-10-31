@@ -13,7 +13,18 @@ module.exports.displayContactList = (req, res, next) => {
     } else {
       res.render("contacts/list", {
         title: "Contact List",
-        ContactList: ContactList,
+        ContactList: ContactList.sort((a, b) => {
+          let fa = a.name.toLowerCase(),
+            fb = b.name.toLowerCase();
+
+          if (fa < fb) {
+            return -1;
+          }
+          if (fa > fb) {
+            return 1;
+          }
+          return 0;
+        }),
         displayName: req.user ? req.user.displayName : "",
       });
       console.log(ContactList);
@@ -55,6 +66,7 @@ module.exports.displayEditPage = (req, res, next) => {
       res.render("contacts/edit", {
         title: "Edit Book",
         contact: contactToEdit,
+        id: id,
       });
     }
   });

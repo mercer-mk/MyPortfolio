@@ -27,10 +27,13 @@
                         name="email" value="<%= contact.email %> " required>
                 </div>
 
+
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-ecit"></i>Submit
-
                 </button>
+                <a href="/contact-list/delete/<%= id %>" class="btn btn-danger btn-small">
+                    <i class="fas fa-trash-alt mr-2"></i>Delete
+                </a>
                 <a href="/contact-list" class="btn btn-warning">
                     <i class="fas-fa-undo"></i>Cancel</a>
             </form>
